@@ -19,6 +19,11 @@ class HomeCubit extends Cubit<HomeState> {
     try {
       homeModel = await homeRepos.getHomeData();
       bannerModel = await homeRepos.getBannerData();
+      for (final element in homeModel.data.productData) {
+        favourites.addAll({
+          element.id: element.isFavorite,
+        });
+      }
       emit(HomeSuccess());
     } catch (error, s) {
       log('get home data error', error: error, stackTrace: s);
@@ -26,9 +31,26 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
+  int quantityProduct = 1;
+  void incrementOrder() {
+    quantityProduct++;
+    emit(HomeRefreshUi());
+  }
+
+  void decrementOrder() {
+    if (quantityProduct != 1) quantityProduct--;
+    emit(HomeRefreshUi());
+  }
+
   int indicatorIndex = 4;
   void changeBannerIndex(int index) {
     indicatorIndex = index;
+    emit(HomeRefreshUi());
+  }
+
+  late Map<int, bool> favourites = {};
+  void changeHomeFavourites(int id) {
+    favourites[id] = !favourites[id]!;
     emit(HomeRefreshUi());
   }
 }

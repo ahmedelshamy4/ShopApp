@@ -25,11 +25,11 @@ class BottomNavBarCubit extends Cubit<BottomNavBarState> {
   ];
 
   List<Widget> bodyScreen = [
-    const NotificationsScreen(),
-    const FavouritesScreen(),
+    NotificationsScreen(),
+    FavouritesScreen(),
     HomeScreen(),
-    const MyOrdersScreen(),
-    const AccountScreen(),
+    MyOrdersScreen(),
+    AccountScreen(),
   ];
   List<Widget> bottomNavIcons = [
     const Icon(Icons.notifications, color: lightMainColor, size: 30.0),
