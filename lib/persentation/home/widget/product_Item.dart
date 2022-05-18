@@ -2,11 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shop_store/persentation/home/cubit/home_cubit.dart';
+import 'package:flutter_shop_store/persentation/product_details.dart/cubit/product_details_cubit.dart';
 import 'package:flutter_shop_store/route/route_constant.dart';
 import 'package:flutter_shop_store/shared/components/navigate.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../shared/components/custom_favourite_icon.dart';
+import '../../../shared/components/custom_text.dart';
 import '../../../shared/constants/colors.dart';
 
 class ProductItem extends StatelessWidget {
@@ -21,8 +24,15 @@ class ProductItem extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
+          BlocProvider.of<ProductDetailsCubit>(context)
+              .changeSmallPhotoIndex(0);
+          BlocProvider.of<ProductDetailsCubit>(context)
+              .getProductDetailsData(productId: data.id);
           navigateWithArgument(
-              context, RouteConstant.productDetailsRoute, data.id);
+            context,
+            RouteConstant.productDetailsRoute,
+            data.id,
+          );
         },
         child: Container(
           decoration: BoxDecoration(
@@ -63,21 +73,56 @@ class ProductItem extends StatelessWidget {
                       Icons.error,
                     ),
                   ),
-                  if (data.discount != 0)
-                    Positioned(
-                      top: 0,
-                      right: 0,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 8.0, right: 10.0),
-                        child: SvgPicture.asset(
-                          'assets/icons/discount.svg',
-                          fit: BoxFit.cover,
-                          height: 30,
-                          width: 30,
-                        ),
-                      ),
-                    ),
                 ],
+              ),
+              if (index.isOdd) const SizedBox(height: 30.0),
+              Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 10.0,
+                  left: 10.0,
+                  right: 10.0,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      text: data.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      fontSize: 14,
+                      height: 1.3,
+                    ),
+                    Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CustomText(
+                              text: 'EGP ${data.price}',
+                              fontSize: 14,
+                              height: 1.3,
+                              fontWeight: FontWeight.w400,
+                              textColor: mainColor,
+                            ),
+                            if (data.discount != 0)
+                              CustomText(
+                                text: ' ${data.oldPrice} EGP',
+                                overflow: TextOverflow.ellipsis,
+                                fontSize: 13,
+                                height: 1.3,
+                                textColor: grey,
+                                decoration: TextDecoration.lineThrough,
+                              ),
+                          ],
+                        ),
+                        const Spacer(),
+                        CustomFavouriteIcon(
+                          productId: data.id,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
