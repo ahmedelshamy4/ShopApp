@@ -13,6 +13,7 @@ Please star ⭐ the repo if you like what you see😉.
 <img src="ShopAppScreenShotes/profile.jpeg" width="20%"></img>
 <img src="ShopAppScreenShotes/basket.jpeg" width="20%"></img>
 <img src="ShopAppScreenShotes/search.jpeg" width="20%"></img>
+<img src="ShopAppScreenShotes/update_profile.jpeg" width="20%"></img>
 
 <p align="center">
 ✨ Plugins and Concepts :
