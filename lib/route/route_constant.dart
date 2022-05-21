@@ -12,4 +12,5 @@ class RouteConstant {
   static const String favouriteRoute = '/favourite';
   static const String searchRoute = '/search';
   static const String paymentRoute = '/payment';
+  static const String updateProfileRoute = '/updateProfile';
 }

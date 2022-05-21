@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop_store/persentation/update_profile/screen/update_profile_screen.dart';
 
 import '../data/repository/basket_repository/basket_repository.dart';
 import '../data/repository/favourite_repository/favourite_repository.dart';
@@ -115,6 +116,11 @@ class AppRouter {
       case RouteConstant.profileRoute:
         return MaterialPageRoute(
           builder: (_) => ProfileScreen(),
+        );
+
+      case RouteConstant.updateProfileRoute:
+        return MaterialPageRoute(
+          builder: (_) => UpdateProfileScreen(),
         );
 
       default:

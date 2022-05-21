@@ -4,9 +4,11 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../route/route_constant.dart';
 import '../../../shared/components/custom_card.dart';
 import '../../../shared/components/custom_dotedLine.dart';
 import '../../../shared/components/custom_text.dart';
+import '../../../shared/components/navigate.dart';
 import '../../../shared/constants/colors.dart';
 import '../../../shared/constants/constant.dart';
 import '../cubit/profile_cubit.dart';
@@ -81,7 +83,10 @@ class ProfileScreen extends StatelessWidget {
                         widget: Column(
                           children: [
                             ListTile(
-                              onTap: () {},
+                              onTap: () => navigateTo(
+                                context,
+                                RouteConstant.updateProfileRoute,
+                              ),
                               title: const CustomText(
                                 text: 'Edit profile',
                                 fontSize: 15,

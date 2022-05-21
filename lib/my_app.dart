@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_shop_store/data/repository/orders_repository/orders_Repository.dart';
 import 'package:flutter_shop_store/persentation/Orders/cubit/orders_cubit.dart';
+import 'package:flutter_shop_store/persentation/update_profile/cubit/update_profile_cubit.dart';
 
 import 'data/repository/basket_repository/basket_repository.dart';
 import 'data/repository/favourite_repository/favourite_repository.dart';
@@ -66,6 +67,10 @@ class ShopApp extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               BasketCubit(BasketRepository(UserPrefs()))..getMyBasketData(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              UpdateProfileCubit(ProfileRepository(UserPrefs())),
         ),
         BlocProvider(
           create: (context) => FavouriteCubit(FavouriteRepository(UserPrefs()))
