@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../excepetions/check_phone_validate.dart';
-import '../cubit/singup_cubit.dart';
+
 import '../../../../shared/components/custom_text.dart';
 import '../../../../shared/components/custom_text_form_field.dart';
-
 import '../../../../shared/constants/colors.dart';
+import '../../excepetions/check_phone_validate.dart';
+import '../cubit/singup_cubit.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({Key? key}) : super(key: key);

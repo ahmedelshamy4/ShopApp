@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import '../../../data/models/favourite_model/favourites_model.dart';
 import 'package:meta/meta.dart';
 
+import '../../../data/models/favourite_model/favourites_model.dart';
 import '../../../data/repository/favourite_repository/favourite_repository.dart';
 
 part 'favourite_state.dart';

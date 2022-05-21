@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import '../data/repository/favourite_repository/favourite_repository.dart';
-import '../data/repository/search_repository/search_repository.dart';
-import '../persentation/favourites/screen/favourites_screen.dart';
-import '../persentation/search/screen/search_screen.dart';
-import '../persentation/auth/login/screen/login_screen.dart';
-import '../persentation/basket/screen/basket_screen.dart';
-import '../persentation/home/screen/home_screen.dart';
-import '../persentation/notifications/screen/notifications_screen.dart';
-import '../persentation/on_boarding/screen/on_boarding_screen.dart';
-import '../persentation/product_details.dart/screen/product_details.dart';
-import '../persentation/profile/screen/profile_screen.dart';
-import 'route_constant.dart';
 
 import '../data/repository/basket_repository/basket_repository.dart';
+import '../data/repository/favourite_repository/favourite_repository.dart';
 import '../data/repository/home_repository/home_repo.dart';
 import '../data/repository/product_details_repository/product_details_repository.dart';
+import '../data/repository/search_repository/search_repository.dart';
 import '../data/repository/user_repository/login_repo.dart';
 import '../data/repository/user_repository/logout.dart';
 import '../data/repository/user_repository/profile_repo.dart';
 import '../data/repository/user_repository/register_repo.dart';
 import '../data/web_services/local/pref/user_pref.dart';
+import '../persentation/auth/login/screen/login_screen.dart';
 import '../persentation/auth/signUp/screen/register_screen.dart';
+import '../persentation/basket/screen/basket_screen.dart';
 import '../persentation/bottom_NavBar_screen/screen/shop_layout.dart';
+import '../persentation/favourites/screen/favourites_screen.dart';
+import '../persentation/home/screen/home_screen.dart';
+import '../persentation/notifications/screen/notifications_screen.dart';
+import '../persentation/on_boarding/screen/on_boarding_screen.dart';
+import '../persentation/product_details.dart/screen/product_details.dart';
+import '../persentation/profile/screen/profile_screen.dart';
+import '../persentation/search/screen/search_screen.dart';
+import 'route_constant.dart';
 
 class AppRouter {
   late UserPrefs userPrefs;

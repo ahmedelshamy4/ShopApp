@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'pref_setup.dart';
 import '../../../../shared/constants/constant.dart';
+import 'pref_setup.dart';
 
 class UserPrefs {
   final perfs = SharedPrefs.preferences;

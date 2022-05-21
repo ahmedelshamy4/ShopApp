@@ -1,8 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/bottom_nav_bar_cubit.dart';
+
 import '../../../shared/constants/colors.dart';
+import '../cubit/bottom_nav_bar_cubit.dart';
 
 class BottomNavBarScreen extends StatelessWidget {
   const BottomNavBarScreen({Key? key}) : super(key: key);

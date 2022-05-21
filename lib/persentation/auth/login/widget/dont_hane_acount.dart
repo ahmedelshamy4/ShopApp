@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../../../../route/route_constant.dart';
 import '../../../../shared/components/custom_text.dart';
 import '../../../../shared/components/navigate.dart';
-
 import '../../../../shared/constants/colors.dart';
 
 class SingUp extends StatelessWidget {

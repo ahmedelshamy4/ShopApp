@@ -18,6 +18,31 @@ class ProductDetailsButton extends StatelessWidget {
     final productDetailsCubit = BlocProvider.of<ProductDetailsCubit>(context);
 
     return BlocConsumer<BasketCubit, BasketState>(
+      listener: (context, state) {
+        if (state is AddToBasketSuccess) {
+          showToast(
+            message: 'product added to basket successfully',
+            state: ToastStates.success,
+          );
+          productDetailsCubit.productDetailsModel.data.inCart = true;
+        } else if (state is BasketUpdateQuantitySuccess) {
+          if (productDetailsCubit.isProductInCart(
+            productDetailsCubit.productDetailsModel.data.id,
+            basketCubit.myBasketOrders.data.cartItems,
+          )) {
+            showToast(
+              message: 'product updated successfully',
+              state: ToastStates.success,
+            );
+          }
+        } else if (state is BasketGetOrderError ||
+            state is BasketUpdateQuantityError) {
+          showToast(
+            message: 'something wrong try again later',
+            state: ToastStates.error,
+          );
+        }
+      },
       builder: (context, state) {
         return Positioned(
           bottom: 0.0,
@@ -40,9 +65,18 @@ class ProductDetailsButton extends StatelessWidget {
                   Expanded(
                     child: CustomButton(
                       onPressed: () {
-                        if (productDetailsCubit
+                        if (!productDetailsCubit
                             .productDetailsModel.data.inCart) {
-                          basketCubit.addToBasketOrders(productId: productId);
+                          basketCubit.addToBasketOrders(
+                            productId: productId,
+                            productQuantity:
+                                productDetailsCubit.productQuantity,
+                          );
+                        } else {
+                          basketCubit.updateQuantityCart(
+                            productId,
+                            productDetailsCubit.productQuantity,
+                          );
                         }
                       },
                       text: productDetailsCubit.productDetailsModel.data.inCart
@@ -55,20 +89,6 @@ class ProductDetailsButton extends StatelessWidget {
             ),
           ),
         );
-      },
-      listener: (context, state) {
-        if (state is BasketGetOrderSuccess) {
-          showToast(
-            message: 'product added to basket successfully',
-            state: ToastStates.success,
-          );
-          productDetailsCubit.productDetailsModel.data.inCart = true;
-        } else if (state is BasketGetOrderError) {
-          showToast(
-            message: 'something wrong try again later',
-            state: ToastStates.error,
-          );
-        }
       },
     );
   }

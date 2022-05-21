@@ -11,3 +11,5 @@ const basketUrl = 'carts';
 const favoritesUrl = 'favorites';
 const categoriesUrl = 'categories';
 const searchUrl = 'products/search';
+const deleteOrdersUrl = 'carts/';
+const updateQuantityOrdersUrl = 'carts/';

@@ -1,8 +1,7 @@
-import '../../models/product_details_model/product_details.dart';
-import '../../web_services/remote/end_points.dart';
-
 import '../../../shared/constants/constant.dart';
+import '../../models/product_details_model/product_details.dart';
 import '../../web_services/remote/dio_helper.dart';
+import '../../web_services/remote/end_points.dart';
 
 class ProductDetailsRepository {
   Future<ProductDetailsModel> getProductDetailsData(

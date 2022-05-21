@@ -2,14 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import '../../data/models/favourite_model/favourites_model.dart';
-import 'custom_card.dart';
-import 'custom_favourite_icon.dart';
-import 'custom_text.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../shared/constants/colors.dart';
+import '../../data/models/favourite_model/favourites_model.dart';
+import 'custom_card.dart';
+import 'custom_favourite_icon.dart';
+import 'custom_text.dart';
 
 class BuildItem extends StatelessWidget {
   final int itemId;

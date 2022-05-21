@@ -1,16 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/profile_cubit.dart';
-import '../../../shared/components/custom_card.dart';
-import '../../../shared/components/custom_text.dart';
-import '../../../shared/constants/constant.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../shared/components/custom_card.dart';
 import '../../../shared/components/custom_dotedLine.dart';
+import '../../../shared/components/custom_text.dart';
 import '../../../shared/constants/colors.dart';
+import '../../../shared/constants/constant.dart';
+import '../cubit/profile_cubit.dart';
 import '../widget/user_data.dart';
 
 class ProfileScreen extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'custom_card.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants/colors.dart';
 import 'custom_button.dart';
+import 'custom_card.dart';
 import 'custom_text.dart';
 
 class EmptyScreen extends StatelessWidget {

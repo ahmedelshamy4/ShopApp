@@ -1,16 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../shared/components/custom_text.dart';
 
+import '../../../shared/components/custom_text.dart';
 import '../../../shared/constants/colors.dart';
 import '../cubit/product_details_cubit.dart';
 
 class ChangeQuantityProduct extends StatelessWidget {
-  const ChangeQuantityProduct({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final productDetailsCubit = BlocProvider.of<ProductDetailsCubit>(context);
@@ -21,7 +16,9 @@ class ChangeQuantityProduct extends StatelessWidget {
             SizedBox(
               height: 40,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  productDetailsCubit.productDetailsQuantity();
+                },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   primary: mainColor,
@@ -33,10 +30,17 @@ class ChangeQuantityProduct extends StatelessWidget {
                 ),
               ),
             ),
+            CustomText(
+              text: productDetailsCubit.productQuantity.toString(),
+            ),
             SizedBox(
               height: 40,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  productDetailsCubit.productDetailsQuantity(
+                    isIncrement: true,
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   primary: mainColor,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../route/route_constant.dart';
+import '../../../shared/components/custom_button.dart';
 import '../../../shared/components/custom_text.dart';
 import '../../../shared/components/empty_screen.dart';
 import '../../../shared/components/loading.dart';
@@ -42,14 +43,16 @@ class BasketScreen extends StatelessWidget {
               );
             } else {
               return basketCubit.myBasketOrders.data.cartItems.isEmpty
-                  ? EmptyScreen(onPress: () {
-                      BlocProvider.of<BottomNavBarCubit>(context)
-                          .changeCurrentIndex(2);
-                      navigatorAndFinish(
-                        context,
-                        RouteConstant.shopLayoutRoute,
-                      );
-                    })
+                  ? EmptyScreen(
+                      onPress: () {
+                        BlocProvider.of<BottomNavBarCubit>(context)
+                            .changeCurrentIndex(2);
+                        navigatorAndFinish(
+                          context,
+                          RouteConstant.shopLayoutRoute,
+                        );
+                      },
+                    )
                   : Column(
                       children: [
                         Expanded(
@@ -83,6 +86,15 @@ class BasketScreen extends StatelessWidget {
                               const SizedBox(
                                 height: 10.0,
                               ),
+                              CustomButton(
+                                text: 'Pay now',
+                                onPressed: () {
+                                  navigateTo(
+                                    context,
+                                    RouteConstant.paymentRoute,
+                                  );
+                                },
+                              )
                             ],
                           ),
                         ),

@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'alert_dialog.dart';
+import '../../../route/route_constant.dart';
+import '../../../shared/components/navigate.dart';
+import '../../product_details.dart/cubit/product_details_cubit.dart';
 import '../cubit/basket_cubit.dart';
 import '../../../shared/components/custom_card.dart';
 import '../../../shared/components/custom_text.dart';
@@ -25,7 +26,19 @@ class BasketItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10.0, right: 10.0, left: 10.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () async {
+          BlocProvider.of<ProductDetailsCubit>(context)
+              .changeSmallPhotoIndex(0);
+          navigateWithArgument(
+            context,
+            RouteConstant.productDetailsRoute,
+            data.product.id,
+          );
+          BlocProvider.of<ProductDetailsCubit>(context)
+              .changeShowBasketIcon(isShow: false);
+          await BlocProvider.of<ProductDetailsCubit>(context)
+              .getProductDetailsData(productId: data.product.id);
+        },
         child: CustomCard(
           height: 140,
           paddingTop: 15.0,
@@ -70,41 +83,58 @@ class BasketItem extends StatelessWidget {
               ),
               const SizedBox(width: 10.0),
               Expanded(
-                  child: Column(
-                children: [
-                  Row(
-                    children: [
-                      CustomText(
-                        text: 'EGP ${data.product.price.toString()}',
-                        fontSize: 15.0,
-                        height: 1.0,
-                        fontWeight: FontWeight.w600,
-                        textColor: mainColor,
-                      ),
-                      const SizedBox(width: 5.0),
-                      if (data.product.discount != 0)
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
                         CustomText(
-                          text: 'EGP ${data.product.oldPrice.toString()}',
-                          fontSize: 13.0,
+                          text: 'EGP ${data.product.price.toString()}',
+                          fontSize: 15.0,
                           height: 1.0,
-                          textColor: grey,
-                          decoration: TextDecoration.lineThrough,
+                          fontWeight: FontWeight.w600,
+                          textColor: mainColor,
                         ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
-                    child: CustomText(
-                      text: data.product.name,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      fontSize: 13.0,
-                      height: 1.3,
-                      fontWeight: FontWeight.w400,
+                        const SizedBox(width: 5.0),
+                        if (data.product.discount != 0)
+                          CustomText(
+                            text: 'EGP ${data.product.oldPrice.toString()}',
+                            fontSize: 13.0,
+                            height: 1.0,
+                            textColor: grey,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                      ],
                     ),
-                  ),
-                ],
-              ))
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      child: CustomText(
+                        text: data.product.name,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        fontSize: 13.0,
+                        height: 1.3,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Expanded(
+                        child: Row(
+                      children: [
+                        const SizedBox(width: 30.0),
+                        const Spacer(),
+                        IconButton(
+                          onPressed: () => showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return MyDialog(model: data);
+                            },
+                          ),
+                          icon: const Icon(Icons.delete),
+                        )
+                      ],
+                    ))
+                  ],
+                ),
+              )
             ],
           ),
         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import '../../../shared/components/custom_text.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../../shared/components/custom_text.dart';
 import '../../../shared/constants/colors.dart';
 import '../cubit/on_boarding_cubit.dart';
 

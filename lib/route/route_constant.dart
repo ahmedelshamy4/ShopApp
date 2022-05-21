@@ -11,4 +11,5 @@ class RouteConstant {
   static const String basketRoute = '/basket';
   static const String favouriteRoute = '/favourite';
   static const String searchRoute = '/search';
+  static const String paymentRoute = '/payment';
 }

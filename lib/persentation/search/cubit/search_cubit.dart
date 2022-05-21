@@ -1,10 +1,10 @@
 import 'dart:developer';
-import 'dart:ffi';
 
 import 'package:bloc/bloc.dart';
+import 'package:meta/meta.dart';
+
 import '../../../data/models/search_model.dart/search_model.dart';
 import '../../../data/repository/search_repository/search_repository.dart';
-import 'package:meta/meta.dart';
 
 part 'search_state.dart';
 

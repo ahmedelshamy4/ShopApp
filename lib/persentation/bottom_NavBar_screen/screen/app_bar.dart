@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../search/cubit/search_cubit.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../route/route_constant.dart';
 import '../../../shared/components/custom_text.dart';
 import '../../../shared/components/navigate.dart';
 import '../../../shared/constants/colors.dart';
+import '../../search/cubit/search_cubit.dart';
 
 class OrdersAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override

@@ -24,3 +24,21 @@ class BasketGetOrderError extends BasketState {
   final String message;
   BasketGetOrderError(this.message);
 }
+
+class BasketUpdateQuantityLoading extends BasketState {}
+
+class BasketUpdateQuantitySuccess extends BasketState {}
+
+class BasketUpdateQuantityError extends BasketState {
+  final String message;
+  BasketUpdateQuantityError(this.message);
+}
+
+class DeleteFromBasketLoading extends BasketState {}
+
+class DeleteFromBasketSuccess extends BasketState {}
+
+class DeleteFromBasketError extends BasketState {
+  final String message;
+  DeleteFromBasketError(this.message);
+}
