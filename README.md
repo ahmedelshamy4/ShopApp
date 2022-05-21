@@ -1,4 +1,7 @@
 # flutter_shop_store
+Shop store is the e-commerce application that show products.I applied all logic you can occurred on any commerce app such as cart items , filtering by price or product name , local favourite,local search,
+
+Please star ⭐ the repo if you like what you see😉.
 
 <img src="ShopAppScreenShotes/onBoarding_1.jpeg" width="15%"></img>
 <img src="ShopAppScreenShotes/onBoarding_2.jpeg" width="15%"></img>
@@ -13,4 +16,13 @@
 
 
 
+✨ Plugins and Concepts :
+. Remote data from (https://student.valuxapps.com/api/) api source.
+. Authenticate with email and password, email verification and forget password
+. Shimmer package to make custom loading animation.
 
+
+✨ App Features :
+Native Splash screen.
+Search bar for searching about any product.
+Possibility to save favorite product.
