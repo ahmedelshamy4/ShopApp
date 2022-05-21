@@ -19,12 +19,16 @@ Please star ⭐ the repo if you like what you see😉.
 <p align="center">
 ✨ Plugins and Concepts :
   </p>
+  </p>
+<p align="center">
 . Remote data from (https://student.valuxapps.com/api/) api source.
 . Authenticate with email and password, email verification and forget password
 . Shimmer package to make custom loading animation.
-
-
+</p>
+</p>
+<p align="center">
 ✨ App Features :
 Native Splash screen.
 Search bar for searching about any product.
 Possibility to save favorite product.
+</p>
