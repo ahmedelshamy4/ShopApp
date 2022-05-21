@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../search/cubit/search_cubit.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../route/route_constant.dart';
 import '../../../shared/components/custom_text.dart';
+import '../../../shared/components/navigate.dart';
 import '../../../shared/constants/colors.dart';
 
 class OrdersAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -84,7 +88,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                   padding: const EdgeInsets.only(left: 10.0, bottom: 5.0),
                   child: TextFormField(
                     readOnly: true,
-                    onTap: () {},
+                    onTap: () {
+                      BlocProvider.of<SearchCubit>(context).resetSearch();
+                      navigateTo(context, RouteConstant.searchRoute);
+                    },
                     decoration: InputDecoration(
                       fillColor: Colors.grey[100],
                       filled: true,
@@ -104,7 +111,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () => navigateTo(context, RouteConstant.basketRoute),
                 icon: SizedBox(
                   height: 40.0,
                   width: 40.0,

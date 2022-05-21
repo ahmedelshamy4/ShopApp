@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/data/web_services/local/pref/routing_prefs.dart';
-import 'package:flutter_shop_store/route/route_constant.dart';
-import 'package:flutter_shop_store/shared/components/navigate.dart';
+import '../../../data/web_services/local/pref/routing_prefs.dart';
+import '../../../route/route_constant.dart';
+import '../../../shared/components/navigate.dart';
 
 import '../../../shared/constants/colors.dart';
 import '../cubit/on_boarding_cubit.dart';

@@ -1,23 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/data/repository/home_repository/home_repo.dart';
-import 'package:flutter_shop_store/data/repository/notification_repository/notification_repository.dart';
-import 'package:flutter_shop_store/data/repository/product_details_repository/product_details_repository.dart';
+import 'data/repository/favourite_repository/favourite_repository.dart';
+import 'data/repository/search_repository/search_repository.dart';
+import 'persentation/favourites/cubit/favourite_cubit.dart';
+import 'persentation/search/cubit/search_cubit.dart';
+import 'data/repository/basket_repository/basket_repository.dart';
+import 'data/repository/home_repository/home_repo.dart';
+import 'data/repository/notification_repository/notification_repository.dart';
+import 'data/repository/product_details_repository/product_details_repository.dart';
 
-import 'package:flutter_shop_store/data/repository/user_repository/login_repo.dart';
-import 'package:flutter_shop_store/data/repository/user_repository/logout.dart';
-import 'package:flutter_shop_store/data/repository/user_repository/profile_repo.dart';
-import 'package:flutter_shop_store/data/repository/user_repository/register_repo.dart';
-import 'package:flutter_shop_store/data/web_services/local/pref/user_pref.dart';
-import 'package:flutter_shop_store/persentation/auth/login/cubit/login_cubit.dart';
-import 'package:flutter_shop_store/persentation/auth/logout/cubit/logout_cubit.dart';
-import 'package:flutter_shop_store/persentation/auth/signUp/cubit/singup_cubit.dart';
-import 'package:flutter_shop_store/persentation/home/cubit/home_cubit.dart';
-import 'package:flutter_shop_store/persentation/notifications/cubit/notification_cubit.dart';
-import 'package:flutter_shop_store/persentation/on_boarding/cubit/on_boarding_cubit.dart';
-import 'package:flutter_shop_store/persentation/product_details.dart/cubit/product_details_cubit.dart';
-import 'package:flutter_shop_store/persentation/profile/cubit/profile_cubit.dart';
+import 'data/repository/user_repository/login_repo.dart';
+import 'data/repository/user_repository/logout.dart';
+import 'data/repository/user_repository/profile_repo.dart';
+import 'data/repository/user_repository/register_repo.dart';
+import 'data/web_services/local/pref/user_pref.dart';
+import 'persentation/auth/login/cubit/login_cubit.dart';
+import 'persentation/auth/logout/cubit/logout_cubit.dart';
+import 'persentation/auth/signUp/cubit/singup_cubit.dart';
+import 'persentation/basket/cubit/basket_cubit.dart';
+import 'persentation/home/cubit/home_cubit.dart';
+import 'persentation/notifications/cubit/notification_cubit.dart';
+import 'persentation/on_boarding/cubit/on_boarding_cubit.dart';
+import 'persentation/product_details.dart/cubit/product_details_cubit.dart';
+import 'persentation/profile/cubit/profile_cubit.dart';
 
 import 'persentation/bottom_NavBar_screen/cubit/bottom_nav_bar_cubit.dart';
 import 'route/app_router.dart';
@@ -48,6 +54,17 @@ class ShopApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SingupCubit(RegisterRepository()),
+        ),
+        BlocProvider(
+          create: (context) => SearchCubit(SearchRepository()),
+        ),
+        BlocProvider(
+          create: (context) =>
+              BasketCubit(BasketRepository(UserPrefs()))..getMyBasketData(),
+        ),
+        BlocProvider(
+          create: (context) => FavouriteCubit(FavouriteRepository(UserPrefs()))
+            ..getFavouritesData(),
         ),
         BlocProvider(
           create: (context) => LogoutCubit(LogoutRepository(UserPrefs())),

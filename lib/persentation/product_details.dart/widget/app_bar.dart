@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../route/route_constant.dart';
+import '../../../shared/components/navigate.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../shared/constants/colors.dart';
@@ -48,7 +50,9 @@ class ProductDetailsAppBar extends StatelessWidget {
           const Spacer(),
           if (productDetailsCubit.isShowBasketIcon)
             InkWell(
-              onTap: () {},
+              onTap: () {
+                navigateTo(context, RouteConstant.basketRoute);
+              },
               child: Container(
                 width: 40,
                 height: 40,

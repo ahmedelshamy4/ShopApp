@@ -14,7 +14,7 @@ class CustomText extends StatelessWidget {
   const CustomText({
     required this.text,
     this.fontSize = 25.0,
-    this.textAlign,
+    this.textAlign = TextAlign.center,
     this.fontWeight,
     this.textColor,
     this.decoration,

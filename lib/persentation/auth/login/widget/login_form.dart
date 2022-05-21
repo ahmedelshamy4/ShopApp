@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/persentation/auth/login/cubit/login_cubit.dart';
-import 'package:flutter_shop_store/shared/components/custom_text_form_field.dart';
+import '../cubit/login_cubit.dart';
+import '../../../../shared/components/custom_text_form_field.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);

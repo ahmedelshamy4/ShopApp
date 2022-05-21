@@ -1,5 +1,5 @@
-import 'package:flutter_shop_store/data/models/product_details_model/product_details.dart';
-import 'package:flutter_shop_store/data/web_services/remote/end_points.dart';
+import '../../models/product_details_model/product_details.dart';
+import '../../web_services/remote/end_points.dart';
 
 import '../../../shared/constants/constant.dart';
 import '../../web_services/remote/dio_helper.dart';

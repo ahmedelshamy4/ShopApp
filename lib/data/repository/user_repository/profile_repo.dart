@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:flutter_shop_store/data/web_services/local/pref/user_pref.dart';
-import 'package:flutter_shop_store/data/web_services/remote/dio_helper.dart';
-import 'package:flutter_shop_store/data/web_services/remote/end_points.dart';
+import '../../web_services/local/pref/user_pref.dart';
+import '../../web_services/remote/dio_helper.dart';
+import '../../web_services/remote/end_points.dart';
 
 import '../../models/login_model/profile.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop_store/route/route_constant.dart';
-import 'package:flutter_shop_store/shared/components/custom_text.dart';
-import 'package:flutter_shop_store/shared/components/navigate.dart';
+import '../../../../route/route_constant.dart';
+import '../../../../shared/components/custom_text.dart';
+import '../../../../shared/components/navigate.dart';
 
 import '../../../../shared/constants/colors.dart';
 

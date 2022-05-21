@@ -1,9 +1,11 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_shop_store/data/models/home_model/banner_model.dart';
-import 'package:flutter_shop_store/data/models/home_model/product_model.dart';
-import 'package:flutter_shop_store/data/repository/home_repository/home_repo.dart';
+
+import '../../../data/models/home_model/banner_model.dart';
+import '../../../data/models/home_model/categories_model.dart';
+import '../../../data/models/home_model/product_model.dart';
+import '../../../data/repository/home_repository/home_repo.dart';
 
 part 'home_state.dart';
 
@@ -11,14 +13,18 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.homeRepos) : super(HomeInitial());
 
   final HomeRepository homeRepos;
+
   late HomeModel homeModel;
   late BannerModel bannerModel;
+  late CategoriesModel categoriesModel;
+  late Map<int, bool> favourites = {};
 
   Future<void> getHomeData() async {
     emit(HomeLoading());
     try {
       homeModel = await homeRepos.getHomeData();
       bannerModel = await homeRepos.getBannerData();
+      categoriesModel = await homeRepos.getCategoriesData();
       for (final element in homeModel.data.productData) {
         favourites.addAll({
           element.id: element.isFavorite,
@@ -48,7 +54,12 @@ class HomeCubit extends Cubit<HomeState> {
     emit(HomeRefreshUi());
   }
 
-  late Map<int, bool> favourites = {};
+  int indicatorIndexCategory = 5;
+  void changeCategoryIndex(int index) {
+    indicatorIndexCategory = index;
+    emit(HomeRefreshUi());
+  }
+
   void changeHomeFavourites(int id) {
     favourites[id] = !favourites[id]!;
     emit(HomeRefreshUi());

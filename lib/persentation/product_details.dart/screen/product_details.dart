@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/persentation/product_details.dart/cubit/product_details_cubit.dart';
-import 'package:flutter_shop_store/shared/components/loading.dart';
-import 'package:flutter_shop_store/shared/components/network_disconnected.dart';
+import '../cubit/product_details_cubit.dart';
+import '../widget/product_details_button.dart';
+import '../../../shared/components/loading.dart';
+import '../../../shared/components/network_disconnected.dart';
 
 import '../widget/app_bar.dart';
 import '../widget/product_description.dart';
@@ -37,14 +38,16 @@ class ProductDetailsScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: 80.0),
-                        Expanded(
-                          child: ProductDetailsPhotos(),
-                        ),
+                        ProductDetailsPhotos(),
                         const SizedBox(height: 10.0),
-                        const Expanded(
+                        Expanded(
                           child: ProductDescription(),
                         ),
                       ],
+                    ),
+                    ProductDetailsButton(
+                      productId:
+                          productDetailsCubit.productDetailsModel.data.id,
                     )
                   ],
                 ),

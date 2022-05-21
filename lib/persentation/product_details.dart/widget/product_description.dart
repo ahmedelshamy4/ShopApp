@@ -1,19 +1,18 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:expandable_text/expandable_text.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/shared/components/custom_text.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../shared/components/custom_favourite_icon.dart';
+import '../../../shared/components/custom_text.dart';
 import '../../../shared/constants/colors.dart';
 import '../cubit/product_details_cubit.dart';
 
 class ProductDescription extends StatelessWidget {
-  const ProductDescription({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final productDetailsCubit = BlocProvider.of<ProductDetailsCubit>(context);
+
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
@@ -28,6 +27,7 @@ class ProductDescription extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          //price and favourite
           Row(
             children: [
               CustomText(
@@ -50,7 +50,67 @@ class ProductDescription extends StatelessWidget {
               ),
               const SizedBox(width: 10.0),
             ],
-          )
+          ),
+          const SizedBox(height: 5.0),
+          //name
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 10.0,
+              right: 10.0,
+              left: 10.0,
+              bottom: 30.0,
+            ),
+            child: CustomText(
+              text: productDetailsCubit.productDetailsModel.data.name,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              fontSize: 18,
+              height: 1.3,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          //description
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ExpandableText(
+                      productDetailsCubit.productDetailsModel.data.description,
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      linkColor: mainColor,
+                      maxLines: 7,
+                      linkStyle: const TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'RobotoSerif',
+                      ),
+                      style: const TextStyle(
+                        fontSize: 15,
+                        height: 1.3,
+                        fontFamily: 'RobotoSerif',
+                      ),
+                    ),
+                    const SizedBox(height: 30.0),
+                    //rate
+                    RatingBar.builder(
+                      minRating: 1,
+                      allowHalfRating: true,
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 0.1),
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: amber,
+                      ),
+                      onRatingUpdate: (rating) => 0,
+                    ),
+                    const SizedBox(height: 80.0),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

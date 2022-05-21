@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop_store/shared/constants/colors.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+import '../constants/colors.dart';
 
 class CustomLoading extends StatelessWidget {
   final double size;

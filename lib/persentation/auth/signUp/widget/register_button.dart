@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/persentation/auth/signUp/cubit/singup_cubit.dart';
-import 'package:flutter_shop_store/shared/components/custom_button.dart';
-import 'package:flutter_shop_store/shared/components/toast.dart';
 
 import '../../../../route/route_constant.dart';
+import '../../../../shared/components/custom_button.dart';
 import '../../../../shared/components/navigate.dart';
+import '../../../../shared/components/toast.dart';
+import '../cubit/singup_cubit.dart';
 
 class RegisterButton extends StatelessWidget {
   const RegisterButton({Key? key}) : super(key: key);

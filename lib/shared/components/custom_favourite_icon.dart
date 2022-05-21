@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:like_button/like_button.dart';
 
+import '../../persentation/favourites/cubit/favourite_cubit.dart';
 import '../../persentation/home/cubit/home_cubit.dart';
 import '../constants/colors.dart';
 
@@ -24,6 +25,7 @@ class CustomFavouriteIcon extends StatelessWidget {
     required int productId,
   }) async {
     BlocProvider.of<HomeCubit>(context).changeHomeFavourites(productId);
+    BlocProvider.of<FavouriteCubit>(context).changeFavourites(productId);
     return !isLiked;
   }
 

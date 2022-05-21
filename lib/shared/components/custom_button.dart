@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop_store/shared/constants/colors.dart';
+import '../constants/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final double width;

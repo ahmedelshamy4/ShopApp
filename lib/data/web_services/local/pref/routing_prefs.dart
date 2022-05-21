@@ -1,5 +1,5 @@
-import 'package:flutter_shop_store/data/web_services/local/pref/pref_setup.dart';
-import 'package:flutter_shop_store/route/route_constant.dart';
+import 'pref_setup.dart';
+import '../../../../route/route_constant.dart';
 
 class RoutingPrefs {
   RoutingPrefs._();

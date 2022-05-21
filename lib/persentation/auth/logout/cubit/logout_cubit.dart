@@ -1,10 +1,10 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_shop_store/data/web_services/local/pref/user_pref.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../data/repository/user_repository/logout.dart';
+import '../../../../data/web_services/local/pref/user_pref.dart';
 
 part 'logout_state.dart';
 

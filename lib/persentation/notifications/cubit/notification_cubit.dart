@@ -1,9 +1,10 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_shop_store/data/models/notifications_model/notifications_model.dart';
-import 'package:flutter_shop_store/data/repository/notification_repository/notification_repository.dart';
 import 'package:meta/meta.dart';
+
+import '../../../data/models/notifications_model/notifications_model.dart';
+import '../../../data/repository/notification_repository/notification_repository.dart';
 
 part 'notification_state.dart';
 

@@ -1,6 +1,6 @@
-import 'package:flutter_shop_store/data/models/login_model/login_model.dart';
-import 'package:flutter_shop_store/data/web_services/remote/dio_helper.dart';
-import 'package:flutter_shop_store/data/web_services/remote/end_points.dart';
+import '../../models/login_model/login_model.dart';
+import '../../web_services/remote/dio_helper.dart';
+import '../../web_services/remote/end_points.dart';
 
 class RegisterRepository {
   Future<LoginModel> userRegister({

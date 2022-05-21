@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop_store/persentation/auth/signUp/widget/register_button.dart';
 
 import '../widget/already_have_acount.dart';
+import '../widget/register_button.dart';
 import '../widget/register_form.dart';
 
 class RegisterScreen extends StatelessWidget {

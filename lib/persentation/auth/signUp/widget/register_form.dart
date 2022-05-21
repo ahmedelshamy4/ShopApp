@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/persentation/auth/excepetions/check_phone_validate.dart';
-import 'package:flutter_shop_store/persentation/auth/signUp/cubit/singup_cubit.dart';
-import 'package:flutter_shop_store/shared/components/custom_text.dart';
-import 'package:flutter_shop_store/shared/components/custom_text_form_field.dart';
+import '../../excepetions/check_phone_validate.dart';
+import '../cubit/singup_cubit.dart';
+import '../../../../shared/components/custom_text.dart';
+import '../../../../shared/components/custom_text_form_field.dart';
 
 import '../../../../shared/constants/colors.dart';
 

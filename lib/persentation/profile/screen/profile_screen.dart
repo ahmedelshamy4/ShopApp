@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/persentation/profile/cubit/profile_cubit.dart';
-import 'package:flutter_shop_store/shared/components/custom_card.dart';
-import 'package:flutter_shop_store/shared/components/custom_text.dart';
-import 'package:flutter_shop_store/shared/constants/constant.dart';
+import '../cubit/profile_cubit.dart';
+import '../../../shared/components/custom_card.dart';
+import '../../../shared/components/custom_text.dart';
+import '../../../shared/constants/constant.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../shared/components/custom_dotedLine.dart';

@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_shop_store/data/models/product_details_model/product_details.dart';
 import 'package:meta/meta.dart';
 
+import '../../../data/models/product_details_model/product_details.dart';
 import '../../../data/repository/product_details_repository/product_details_repository.dart';
 
 part 'product_details_state.dart';

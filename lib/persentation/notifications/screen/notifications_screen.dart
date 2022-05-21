@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/persentation/notifications/cubit/notification_cubit.dart';
-import 'package:flutter_shop_store/shared/components/loading.dart';
-import 'package:flutter_shop_store/shared/components/network_disconnected.dart';
+import '../cubit/notification_cubit.dart';
+import '../../../shared/components/loading.dart';
+import '../../../shared/components/network_disconnected.dart';
 
 import '../widget/notification_Item.dart';
 

@@ -38,6 +38,7 @@ class UserData {
     required this.token,
   });
   factory UserData.fromJson(Map<String, dynamic> json) {
+    //داتا االلي بتيجي
     return UserData(
       id: json['id'] as int,
       name: json['name'] as String,

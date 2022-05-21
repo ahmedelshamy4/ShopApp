@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:flutter_shop_store/data/web_services/local/pref/pref_setup.dart';
-import 'package:flutter_shop_store/shared/constants/constant.dart';
+import 'pref_setup.dart';
+import '../../../../shared/constants/constant.dart';
 
 class UserPrefs {
   final perfs = SharedPrefs.preferences;

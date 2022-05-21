@@ -1,16 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/persentation/home/cubit/home_cubit.dart';
-import 'package:flutter_shop_store/persentation/product_details.dart/cubit/product_details_cubit.dart';
-import 'package:flutter_shop_store/route/route_constant.dart';
-import 'package:flutter_shop_store/shared/components/navigate.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../route/route_constant.dart';
 import '../../../shared/components/custom_favourite_icon.dart';
 import '../../../shared/components/custom_text.dart';
+import '../../../shared/components/navigate.dart';
 import '../../../shared/constants/colors.dart';
+import '../../product_details.dart/cubit/product_details_cubit.dart';
+import '../cubit/home_cubit.dart';
 
 class ProductItem extends StatelessWidget {
   final int index;

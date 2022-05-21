@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_shop_store/persentation/auth/login/cubit/login_cubit.dart';
-import 'package:flutter_shop_store/persentation/auth/logout/cubit/logout_cubit.dart';
 
 import '../../../route/route_constant.dart';
 import '../../../shared/components/custom_card.dart';
@@ -11,6 +8,7 @@ import '../../../shared/components/custom_text.dart';
 import '../../../shared/components/navigate.dart';
 import '../../../shared/components/toast.dart';
 import '../../../shared/constants/colors.dart';
+import '../../auth/logout/cubit/logout_cubit.dart';
 
 class SignOut extends StatelessWidget {
   @override
