@@ -14,8 +14,6 @@ Please star ⭐ the repo if you like what you see😉.
 <img src="ShopAppScreenShotes/basket.jpeg" width="15%"></img>
 <img src="ShopAppScreenShotes/search.jpeg" width="15%"></img>
 
-
-</p>
 <p align="center">
 ✨ Plugins and Concepts :
 . Remote data from (https://student.valuxapps.com/api/) api source.
