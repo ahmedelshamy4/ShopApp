@@ -25,7 +25,7 @@ Please star ⭐ the repo if you like what you see😉.
 <p align="center">
 ✨ App Features :
   
-Native Splash screen.
-Search bar for searching about any product.
-Possibility to save favorite product.
+<p>Native Splash screen.</p>
+<p>Search bar for searching about any product.</p>
+<p>Possibility to save favorite product.</p>
 </p>
