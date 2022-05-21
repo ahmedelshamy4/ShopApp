@@ -15,8 +15,10 @@ Please star ⭐ the repo if you like what you see😉.
 <img src="ShopAppScreenShotes/search.jpeg" width="15%"></img>
 
 
-
+</p>
+<p align="center">
 ✨ Plugins and Concepts :
+  </p>
 . Remote data from (https://student.valuxapps.com/api/) api source.
 . Authenticate with email and password, email verification and forget password
 . Shimmer package to make custom loading animation.
