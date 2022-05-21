@@ -6,9 +6,9 @@
 <img src="ShopAppScreenShotes/register.jpeg" width="15%"></img>
 <img src="ShopAppScreenShotes/home.jpeg" width="15%"></img>
 <img src="ShopAppScreenShotes/notification.jpeg" width="15%"></img>
+<img src="ShopAppScreenShotes/favourite.jpeg" width="15%"></img>
 <img src="ShopAppScreenShotes/profile.jpeg" width="15%"></img>
 <img src="ShopAppScreenShotes/basket.jpeg" width="15%"></img>
-<img src="ShopAppScreenShotes/favourite.jpeg" width="15%"></img>
 <img src="ShopAppScreenShotes/search.jpeg" width="15%"></img>
 
 
