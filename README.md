@@ -3,7 +3,7 @@ Shop store is the e-commerce application that show products.I applied all logic 
 
 Please star ⭐ the repo if you like what you see😉.
 
-<img src="ShopAppScreenShotes/onBoarding_1.jpeg" width="15%"></img>
+<img src="ShopAppScreenShotes/onBoarding_1.jpeg" width="20%"></img>
 <img src="ShopAppScreenShotes/onBoarding_2.jpeg" width="15%"></img>
 <img src="ShopAppScreenShotes/login.jpeg" width="15%"></img>
 <img src="ShopAppScreenShotes/register.jpeg" width="15%"></img>
