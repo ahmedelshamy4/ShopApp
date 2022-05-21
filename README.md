@@ -18,9 +18,9 @@ Please star ⭐ the repo if you like what you see😉.
 <p align="center">
 ✨ Plugins and Concepts :
   
-. Remote data from (https://student.valuxapps.com/api/) api source.
-. Authenticate with email and password, email verification and forget password
-. Shimmer package to make custom loading animation.
+<p>. Remote data from (https://student.valuxapps.com/api/) api source.</p>
+<p>. Authenticate with email and password, email verification and forget password.</p>
+<p>. Shimmer package to make custom loading animation.</p>
 </p>
 <p align="center">
 ✨ App Features :
