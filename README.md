@@ -26,8 +26,8 @@ Please star ⭐ the repo if you like what you see😉.
 <p>. Shimmer package to make custom loading animation.</p>
 <p align="center">
 Apis dio:
-.<p> json_annotation:</p>
-. <p>cached_network_image:</p>
+.<p> json_annotation</p>:
+. <p>cached_network_image</p>:
   </p>
  </P State Management<p>
 <p>Bloc:</p>
