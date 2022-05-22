@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop_store/data/repository/address_repository/address_repository.dart';
+import 'package:flutter_shop_store/persentation/address/screen/add_address_screen.dart';
+import 'package:flutter_shop_store/persentation/address/screen/my_address_screen.dart';
+import 'package:flutter_shop_store/persentation/address/screen/update_address_screen.dart';
+import 'package:flutter_shop_store/persentation/payment/screen/payment_screen.dart';
 import 'package:flutter_shop_store/persentation/update_profile/screen/update_profile_screen.dart';
 
 import '../data/repository/basket_repository/basket_repository.dart';
@@ -35,6 +40,7 @@ class AppRouter {
   late BasketRepository basketRepository;
   late FavouriteRepository favouriteRepository;
   late SearchRepository searchRepository;
+  late AddressRepository addressRepository;
 
   void initAppSettings() {
     userPrefs = UserPrefs();
@@ -47,6 +53,7 @@ class AppRouter {
     basketRepository = BasketRepository(userPrefs);
     favouriteRepository = FavouriteRepository(userPrefs);
     searchRepository = SearchRepository();
+    addressRepository = AddressRepository(userPrefs);
   }
 
   Route? generateRoute(RouteSettings settings) {
@@ -103,6 +110,16 @@ class AppRouter {
           },
         );
 
+      case RouteConstant.updateAddressRoute:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return UpdateAddressScreen(
+              index: settings.arguments! as int,
+            );
+          },
+        );
+
       case RouteConstant.notificationsRoute:
         return MaterialPageRoute(
           builder: (_) => NotificationsScreen(),
@@ -121,6 +138,22 @@ class AppRouter {
       case RouteConstant.updateProfileRoute:
         return MaterialPageRoute(
           builder: (_) => UpdateProfileScreen(),
+        );
+
+      case RouteConstant.myAddressRoute:
+        return MaterialPageRoute(
+          builder: (_) => MyAddressScreen(),
+        );
+
+      case RouteConstant.addAddressRoute:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => AddAddressScreen(),
+        );
+
+      case RouteConstant.paymentRoute:
+        return MaterialPageRoute(
+          builder: (_) => PaymentScreen(),
         );
 
       default:

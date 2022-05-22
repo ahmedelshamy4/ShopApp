@@ -40,35 +40,48 @@ class MyDialog extends StatelessWidget {
             ),
             Expanded(
               child: SizedBox(
-                child: TextButton(
-                  onPressed: () {
-                    final basketCubit = BlocProvider.of<BasketCubit>(context);
-                    basketCubit.deleteOrderFromBasketData(productId: model.id);
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text(
-                    'Delete',
-                    style: TextStyle(fontSize: 20, color: mainColor),
-                  ),
+                width: double.infinity,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextButton(
+                        onPressed: () {
+                          final basketCubit =
+                              BlocProvider.of<BasketCubit>(context);
+                          basketCubit.deleteOrderFromBasketData(
+                              productId: model.id);
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text(
+                          'Delete',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: mainColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 5.0,
+                    ),
+                    Expanded(
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text(
+                          'Cancel',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: mainColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-            const SizedBox(
-              width: 5.0,
-            ),
-            Expanded(
-              child: SizedBox(
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text(
-                    'Cancel',
-                    style: TextStyle(fontSize: 20, color: mainColor),
-                  ),
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),

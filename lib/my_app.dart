@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_shop_store/data/repository/address_repository/address_repository.dart';
 import 'package:flutter_shop_store/data/repository/orders_repository/orders_Repository.dart';
 import 'package:flutter_shop_store/persentation/Orders/cubit/orders_cubit.dart';
+import 'package:flutter_shop_store/persentation/address/cubit/address_cubit.dart';
 import 'package:flutter_shop_store/persentation/update_profile/cubit/update_profile_cubit.dart';
 
 import 'data/repository/basket_repository/basket_repository.dart';
@@ -42,10 +44,10 @@ class ShopApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    // SystemChrome.setPreferredOrientations([
+    //   DeviceOrientation.portraitUp,
+    //   DeviceOrientation.portraitDown,
+    // ]);
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -78,6 +80,10 @@ class ShopApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => LogoutCubit(LogoutRepository(UserPrefs())),
+        ),
+        BlocProvider(
+          create: (context) =>
+              AddressCubit(AddressRepository(UserPrefs()))..getMyAddressData(),
         ),
         BlocProvider(
           create: (context) => ProductDetailsCubit(ProductDetailsRepository()),

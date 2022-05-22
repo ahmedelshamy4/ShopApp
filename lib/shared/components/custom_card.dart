@@ -28,7 +28,7 @@ class CustomCard extends StatelessWidget {
       height: height,
       width: width,
       child: Card(
-        elevation: 2.0,
+        elevation: 3.0,
         shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
           borderSide: const BorderSide(color: lightMainColor),

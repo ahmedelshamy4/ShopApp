@@ -89,4 +89,26 @@ class BasketCubit extends Cubit<BasketState> {
     }
     emit(AddToBasketRefreshUi());
   }
+
+  void quantityItem({
+    required bool isIncrement,
+    required int index,
+  }) {
+    if (isIncrement) {
+      myBasketOrders.data.cartItems[index].quantity++;
+      updateBasketOrderData(
+        productId: myBasketOrders.data.cartItems[index].id,
+        quantity: myBasketOrders.data.cartItems[index].quantity,
+      );
+    } else {
+      if (myBasketOrders.data.cartItems[index].quantity > 1) {
+        myBasketOrders.data.cartItems[index].quantity--;
+        updateBasketOrderData(
+          productId: myBasketOrders.data.cartItems[index].id,
+          quantity: myBasketOrders.data.cartItems[index].quantity,
+        );
+      }
+    }
+    emit(AddToBasketRefreshUi());
+  }
 }

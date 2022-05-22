@@ -104,7 +104,10 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             const CustomDotedLine(),
                             ListTile(
-                              onTap: () {},
+                              onTap: () => navigateTo(
+                                context,
+                                RouteConstant.myAddressRoute,
+                              ),
                               title: const CustomText(
                                 text: 'Add and edit address',
                                 fontSize: 15,

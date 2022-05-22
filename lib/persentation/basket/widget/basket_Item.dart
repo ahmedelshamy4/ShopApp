@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_shop_store/persentation/basket/widget/change_quantity_product.dart';
+import 'package:flutter_shop_store/persentation/product_details.dart/widget/change_quantity_product.dart';
 import 'alert_dialog.dart';
 import '../../../route/route_constant.dart';
 import '../../../shared/components/navigate.dart';
@@ -117,21 +119,23 @@ class BasketItem extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                        child: Row(
-                      children: [
-                        const SizedBox(width: 30.0),
-                        const Spacer(),
-                        IconButton(
-                          onPressed: () => showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return MyDialog(model: data);
-                            },
-                          ),
-                          icon: const Icon(Icons.delete),
-                        )
-                      ],
-                    ))
+                      child: Row(
+                        children: [
+                          const SizedBox(width: 30.0),
+                          QuantityProduct(index: index),
+                          const Spacer(),
+                          IconButton(
+                            onPressed: () => showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return MyDialog(model: data);
+                              },
+                            ),
+                            icon: const Icon(Icons.delete),
+                          )
+                        ],
+                      ),
+                    )
                   ],
                 ),
               )

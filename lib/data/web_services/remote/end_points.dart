@@ -14,3 +14,5 @@ const searchUrl = 'products/search';
 const deleteOrdersUrl = 'carts/';
 const updateQuantityOrdersUrl = 'carts/';
 const updateProfileUrl = 'update-profile';
+const addressesUrl = 'addresses';
+const updateAddressesUrl = 'addresses/';

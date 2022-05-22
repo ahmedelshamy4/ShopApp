@@ -13,4 +13,7 @@ class RouteConstant {
   static const String searchRoute = '/search';
   static const String paymentRoute = '/payment';
   static const String updateProfileRoute = '/updateProfile';
+  static const String myAddressRoute = '/myAddress';
+  static const String addAddressRoute = '/addAddress';
+  static const String updateAddressRoute = '/updateAddress';
 }
