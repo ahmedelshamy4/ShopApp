@@ -24,6 +24,10 @@ Please star ⭐ the repo if you like what you see😉.
 <p>. Remote data from (https://student.valuxapps.com/api/) api source.</p>
 <p>. Authenticate with email and password, email verification and forget password.</p>
 <p>. Shimmer package to make custom loading animation.</p>
+Apis
+dio:
+json_annotation:
+cached_network_image:
 </p>
 <p align="center">
 ✨ App Features :
