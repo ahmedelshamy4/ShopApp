@@ -13,18 +13,19 @@ Please star ⭐ the repo if you like what you see😉.
 <img src="ShopAppScreenShotes/profile.jpeg" width="20%"></img>
 <img src="ShopAppScreenShotes/basket.jpeg" width="20%"></img>
 <img src="ShopAppScreenShotes/search.jpeg" width="20%"></img>
+<img src="ShopAppScreenShotes/update_profile.jpeg" width="20%"></img>
 
 <p align="center">
 ✨ Plugins and Concepts :
   
-. Remote data from (https://student.valuxapps.com/api/) api source.
-. Authenticate with email and password, email verification and forget password
-. Shimmer package to make custom loading animation.
+<p>. Remote data from (https://student.valuxapps.com/api/) api source.</p>
+<p>. Authenticate with email and password, email verification and forget password.</p>
+<p>. Shimmer package to make custom loading animation.</p>
 </p>
 <p align="center">
 ✨ App Features :
   
-Native Splash screen.
-Search bar for searching about any product.
-Possibility to save favorite product.
+<p>.Native Splash screen.</p>
+<p>.Search bar for searching about any product.</p>
+<p>.Possibility to save favorite product.</p>
 </p>
