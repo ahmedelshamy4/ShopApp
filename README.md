@@ -29,7 +29,10 @@ Apis dio:
 .<p> json_annotation:</p>
 . <p>cached_network_image:</p>
   </p>
+ </P State Management<p>
+<p>Bloc:</p>
 </p>
+
 <p align="center">
 ✨ App Features :
   
