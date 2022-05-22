@@ -14,6 +14,9 @@ Please star ⭐ the repo if you like what you see😉.
 <img src="ShopAppScreenShotes/basket.jpeg" width="20%"></img>
 <img src="ShopAppScreenShotes/search.jpeg" width="20%"></img>
 <img src="ShopAppScreenShotes/update_profile.jpeg" width="20%"></img>
+<img src="ShopAppScreenShotes/new_address.jpeg" width="20%"></img>
+<img src="ShopAppScreenShotes/edit_address.jpeg" width="20%"></img>
+
 
 <p align="center">
 ✨ Plugins and Concepts :
